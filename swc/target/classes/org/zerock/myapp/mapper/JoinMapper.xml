@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.myapp.mapper.JoinMapper">
+
+<!-- 	<select id="getReservationList" resultType="org.zerock.myapp.domain.JoinMemberVO"> -->
+<!-- 		<![CDATA[SELECT * FROM RESERVATIONLIST]]> -->
+<!-- 	</select> -->
+	
+	<insert id="insertUser" >
+		insert into USER_MSTR (userId, userPw, userNm, gender, authCode, dept) 	values (#{userId}, #{userPw}, #{userNm}, #{gender}, #{authCode}, #{dept})
+	</insert>
+	
+	<update id="updateUser">
+		update USER_MSTR
+		set
+			userNm = #{userNm},
+			gender = #{gender},
+			authCode = #{authCode},
+			dept = #{dept}
+		where
+			userId = #{userId}
+	</update>
+	
+
+	
+<!-- 	<resultMap type="org.zerock.myapp.domain.JoinMemberVO" id="memberVO"> -->
+<!-- 		<id property="USER_MSTR" column="USER_MSTR" /> -->
+<!-- 		<result property="userId" column="userId" /> -->
+<!-- 		<result property="userPw" column="userPw" /> -->
+<!-- 		<result property="userNm" column="userNm" /> -->
+<!-- 		<result property="gender" column="gender" /> -->
+<!-- 		<result property="authCode" column="authCode" /> -->
+<!-- 		<result property="dept" column="dept" /> -->
+<!-- 	</resultMap> -->
+</mapper>
