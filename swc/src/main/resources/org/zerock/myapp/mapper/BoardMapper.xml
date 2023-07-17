@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.myapp.mapper.BoardMapper">
+
+<!-- 	<select id="getReservationList" resultType="org.zerock.myapp.domain.JoinMemberVO"> -->
+<!-- 		<![CDATA[SELECT * FROM RESERVATIONLIST]]> -->
+<!-- 	</select> -->
+
+	<select id="getList" resultType="org.zerock.myapp.domain.BoardVO">
+		SELECT BNO, USERID, SUBJECT, CONTENT, STATUSCODE, POSTTYPECODE
+		FROM BOARD_MSTR
+		WHERE 1 = 1
+	</select>
+	
+	<select id="getBoardList" resultType="org.zerock.myapp.domain.BoardVO">
+    SELECT BNO, USERID, SUBJECT, CONTENT, STATUSCODE, POSTTYPECODE
+    FROM BOARD_MSTR
+    WHERE
+        <if test="statusCode != null and statusCode != ''">
+            STATUSCODE = #{statusCode} AND 
+        </if>
+        
+        <if test="subject != null and subject != ''">
+            SUBJECT LIKE '%' || #{subject} || '%' AND 
+        </if>
+        1 = 1
+</select>
+
+	<select id="getDetail" resultType="org.zerock.myapp.domain.BoardVO">
+		select BNO, a.USERID, a.DEPT, SUBJECT, CONTENT, STATUSCODE, POSTTYPECODE, a.USERNM FROM board_mstr b JOIN user_mstr a ON  a.userId = b.userId
+		WHERE BNO = #{bno}
+	</select>
+	
+	
+
+
+
+</mapper>

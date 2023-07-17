@@ -11,4 +11,6 @@ public class BoardVO {
 	private String statusCode;
 	private String postTypeCode;
 	
+	private String userNm;
+	private String dept;
 }
