@@ -242,6 +242,7 @@
 
 - v-on 디렉티브를 사용해 이벤트 메서드와 연결할 수 있다.
 
+<pre>
 <code class="codes">
   <body>
     <div id="app">
@@ -287,6 +288,7 @@
     </script>
   </body>
 </code>
+</pre>
 
 --------------------------------------------------------------------------------------------------
 
@@ -296,6 +298,7 @@
 
 - v-if를 사용해서 프로퍼티를 이용해 조건을 주어 HTML을 표현할 수 있다.
 
+<pre>
 <code class="codes">
   <body>
     <div id="app">
@@ -337,11 +340,13 @@
     </script>
   </body>
 </code>
+</pre>
 
 ### v-for
 
 - v-for은 배열로 이루어진 프로퍼티를 반복적으로 표현할 때 사용한다.
 
+<pre>
 <code class="codes">
   <body>
     <div id="app">
@@ -385,7 +390,7 @@
     </script>
   </body>
 </code>
-
+</pre>
 --------------------------------------------------------------------------------------------------
 
 
@@ -400,6 +405,7 @@
 - computed의 원리가 각 함수안에 들어있는 값의 변경을 감지하여 실행되게 되는데, 예제코드는 price또는 count값이 변경되면 sum함수안의 프로퍼티가 변경되는것 이므로, sum이 실행, 변경되면
 taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
 
+<pre>
 <code class="codes">
   <body>
     <div id="app">
@@ -428,7 +434,7 @@ taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
     </script>
   </body>
 </code>
-
+</pre>
 
 ### watch
 
@@ -436,6 +442,7 @@ taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
 
 - 하지만 computed는 무조건 반환값이 있어야하는데, watch는 그렇지않다. 그래서 보통 computed는 계산식을 적용, watch는 어떤 로직에 따른 처리를 할 때 사용한다.
 
+<pre>
 <code class="codes">
   <body>
     <div id="app">
@@ -465,7 +472,7 @@ taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
     </script>
   </body>
 </code>
-
+</pre>
 
 ## 9. component
 
@@ -484,6 +491,7 @@ taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
 
 - 로컬은 vue 인스턴스에 components 옵션을 통해 생성하는 방식이다.
 
+<pre>
 <code class="codes">
   <body>
     <div id="app">
@@ -518,8 +526,9 @@ taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
     </style>
   </body>
 </code>
+</pre>
 
-
+<pre>
 <code class="codes">
   <body>
     <div id="app">
@@ -552,12 +561,14 @@ taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
     </script>
   </body>
 </code>
+</pre>
 
 ### props
 
 - 컴포넌트를 사용할 때 HTML의 컴포넌트 태그에서 데이터를 props를 이용해 전달 받을수 있다.
 - 주의점은 props의 프로퍼티명은 myName과 같이 카멜케이스로 쓰고 HTML에서는 my-name처럼 케밥케이스로 쓴다.
 
+<pre>
 <code class="codes">
   <body>
     <h2>컴포넌트에 값을 전달하는 예제</h2>
@@ -584,3 +595,4 @@ taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
     </script>
   </body>
 </code>
+</pre>
