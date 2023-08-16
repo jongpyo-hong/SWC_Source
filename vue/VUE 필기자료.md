@@ -10,14 +10,19 @@
 - vue.js로 프론트엔드를 개발할때는 Vue 인스턴스를 만드는 것부터 시작한다.
 - vue 인스턴스에서 제공되는 옵션을 붙여 개발을 할 수 있다.
 
+    <div class="codes">
       <code class="codes">
+
         new Vue({
           el : "#app",
           data: {
             text : 'hello world'
           },
         })
+
       </code>
+    </div class="codes">
+
 
 - 기본적으로 위의 코드처럼 new Vue를 통해 인스턴스를 생성하고 안에 el, data등 옵션을 넣어 인스턴스를 생성하고 화면을 컨트롤 할 수 있다.
 
@@ -26,7 +31,8 @@
 
 ## 2. 데이터 표시 {{ 데이터 }}
 
-  - <code class="codes">
+  <code class="codes">
+  ```
         <div id="app">
           <p> {{ myText }}</p>  <!-- myText의 값 출력 -->
         </div>
@@ -38,6 +44,7 @@
             }
           })
         </script>
+  ```
   <code>
 
 ### v-text
@@ -46,9 +53,13 @@
 - 이것을 디렉티브라는것을 통해서도 표현이 가능한데, 디렉티브는 Vue에서 HTML 요소에 대해 실행하는 명령어다.
 - 디렉티브는 'v-'가 붙어있는데, 위의 코드는 아래의 HTML로 표현이 가능하다.
 
-    - < div id="app" >
-        < p v-text="myText"></ p >    <!-- v-text라는 디렉티브를 통해 myText 프로퍼티 표현-->
-      < /div >
+- <code>
+
+        <div id="app">
+          <p v-text="myText"></p>    <!-- v-text라는 디렉티브를 통해 myText 프로퍼티 표현-->
+        </div>
+
+  </code>
 
 
 ### v-html
@@ -83,6 +94,7 @@
 
 <code class="codes">
 
+```
     <div id="app">
       <p>{{ myPrice * 1.08 }}</p>
       <p>{{ "안녕하세요~ "+ myName + "님" }}</p>
@@ -96,7 +108,7 @@
           myName:'홍길동'    //문자형
         }
       })
-    </script>
+    </script>```
 
 </code>
 
@@ -106,6 +118,7 @@
 ### 배열, 오브젝트
 
 <code class="codes">
+```
 
         <h2>배열로 값을 표시하는 예제</h2>
         <div id="app">
@@ -122,7 +135,7 @@
               myObject:{name:'다즐링', price:600}
             }
           })
-        </script>
+        </script>```
 
 </code>
 - 프로퍼티에 배열, 오브젝트를 설정해 HTML에 출력할 수 있다.
@@ -136,6 +149,7 @@
 - v-bind는 태그의 속성을 vue에서 지정할 수 있는 디렉테브다.
 
 <code class="codes">
+```
 
           <div id="app">
             <input :type='type1'>        <!-- v-bind 생략 가능 -->
@@ -157,7 +171,7 @@
                 isON: true
               }
             })
-          </script>
+          </script>```
 
 </code>
 
@@ -171,6 +185,7 @@
 - v-bind를 통해 input에서 입력한 값을 프로퍼티에 저장 가능하다. 다양한 예제를 아래와 같이 다 입력해놨다.
 
 <code class="codes">
+```
 
     <h2>입력한 문자열을 표시하는 예제</h2>
     <div id="app">
@@ -223,7 +238,7 @@
           select_model:''
         }
       })
-    </script>
+    </script>```
 
 </code>
 
@@ -237,6 +252,7 @@
 
 
 <code class="codes">
+```
 
     <div id="app">
       <!--v-on:click으로 클릭이벤트 설정 가능-->
@@ -278,7 +294,7 @@
           }
         }
       })
-    </script>
+    </script>```
 
 </code>
 
@@ -293,6 +309,7 @@
 
 
 <code class="codes">
+```
 
     <div id="app">
       <!--버튼 클릭시 클릭한 text출력과 클릭한 버튼 비활성-->
@@ -330,7 +347,7 @@
           }
         }
       })
-    </script>
+    </script>```
 
 </code>
 
@@ -341,6 +358,7 @@
 
 
 <code class="codes">
+```
 
     <div id="app">
       <ul>
@@ -380,7 +398,7 @@
           }
         }
       })
-    </script>
+    </script>```
 
 </code>
 
@@ -400,6 +418,7 @@ taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
 
 
 <code class="codes">
+```
 
     <div id="app">
       <input v-model.number="price" type="number">원 x
@@ -424,7 +443,7 @@ taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
           }
         }
       })
-    </script>
+    </script>```
 
 </code>
 
@@ -437,6 +456,7 @@ taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
 
 
 <code class="codes">
+```
 
     <div id="app">
       <p>금지문자는、「{{ forbiddenText }}」</p>
@@ -462,7 +482,7 @@ taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
           }
         }
       })
-    </script>
+    </script>```
 
 </code>
 
@@ -486,6 +506,7 @@ taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
 
 
 <code class="codes">
+```
 
     <div id="app">
       <!--컴포넌트 태그명을 사용해 컴포넌트 사용-->
@@ -516,13 +537,14 @@ taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
         border-radius: 8px;
         padding: 8px;
       }
-    </style>
+    </style>```
 
 </code>
 
 
 
 <code class="codes">
+```
 
     <div id="app">
       <!--각기 다른 컴포넌트-->
@@ -551,7 +573,7 @@ taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
           'my-component': MyComponent
         }
       })
-    </script>
+    </script>```
 
 </code>
 
@@ -563,6 +585,7 @@ taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
 
 
 <code class="codes">
+```
 
     <h2>컴포넌트에 값을 전달하는 예제</h2>
     <div id="app">
@@ -585,6 +608,6 @@ taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
           'my-component': MyComponent
         }
       })
-    </script>
+    </script>```
 
 </code>
