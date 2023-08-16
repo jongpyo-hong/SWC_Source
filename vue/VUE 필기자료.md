@@ -10,7 +10,7 @@
 - vue.js로 프론트엔드를 개발할때는 Vue 인스턴스를 만드는 것부터 시작한다.
 - vue 인스턴스에서 제공되는 옵션을 붙여 개발을 할 수 있다.
 
-      - <code class="codes">
+      <code class="codes">
         new Vue({
           el : "#app",
           data: {
@@ -26,11 +26,7 @@
 
 ## 2. 데이터 표시 {{ 데이터 }}
 
-  <code class="codes">
-    <!DOCTYPE html>
-    <html>
-      ...
-      <body>
+  - <code class="codes">
         <div id="app">
           <p> {{ myText }}</p>  <!-- myText의 값 출력 -->
         </div>
@@ -42,8 +38,6 @@
             }
           })
         </script>
-      </body>
-    </html>
   <code>
 
 ### v-text
@@ -60,9 +54,9 @@
 ### v-html
 
 - v-text는 프로퍼티 텍스트를 그대로 출력하지만 v-html은 HTML로 표현이 된다.
-    
+
+   ``` 
   <code class="codes">
-    <body>
       <h2>HTML로 표시하는 예제</h2>
       <div id="app">
           <p>{{ myText }}</p>
@@ -77,8 +71,7 @@
             }
         })
     </script>
-    </body>
-  </code>
+  </code>```
 
 --------------------------------------------------------------------------------------------------
 
@@ -89,7 +82,7 @@
 - Vue에서 데이터타입은 숫자형, 문자형, Boolean이 있다.
 
 <code class="codes">
-  <body>
+
     <div id="app">
       <p>{{ myPrice * 1.08 }}</p>
       <p>{{ "안녕하세요~ "+ myName + "님" }}</p>
@@ -104,7 +97,7 @@
         }
       })
     </script>
-  </body>
+
 </code>
 
 - 위의 코드처럼 숫자형, 문자형에 맞게 수식이나 문자함수를 이용할 수 있다.
@@ -113,7 +106,7 @@
 ### 배열, 오브젝트
 
 <code class="codes">
-  <body>
+
         <h2>배열로 값을 표시하는 예제</h2>
         <div id="app">
           <p>{{ myArray }}</p>
@@ -130,7 +123,7 @@
             }
           })
         </script>
-      </body>
+
 </code>
 - 프로퍼티에 배열, 오브젝트를 설정해 HTML에 출력할 수 있다.
 
@@ -143,7 +136,7 @@
 - v-bind는 태그의 속성을 vue에서 지정할 수 있는 디렉테브다.
 
 <code class="codes">
-  <body>
+
           <div id="app">
             <input :type='type1'>        <!-- v-bind 생략 가능 -->
             <input v-bind:type='type2'>
@@ -165,7 +158,7 @@
               }
             })
           </script>
-  </body>
+
 </code>
 
 
@@ -178,7 +171,7 @@
 - v-bind를 통해 input에서 입력한 값을 프로퍼티에 저장 가능하다. 다양한 예제를 아래와 같이 다 입력해놨다.
 
 <code class="codes">
-  <body>
+
     <h2>입력한 문자열을 표시하는 예제</h2>
     <div id="app">
     <!--v-model을 사용해 프로퍼티에 값을 input값으로 저장가능-->
@@ -231,7 +224,7 @@
         }
       })
     </script>
-  </body>
+
 </code>
 
 --------------------------------------------------------------------------------------------------
@@ -242,9 +235,9 @@
 
 - v-on 디렉티브를 사용해 이벤트 메서드와 연결할 수 있다.
 
-<pre>
+
 <code class="codes">
-  <body>
+
     <div id="app">
       <!--v-on:click으로 클릭이벤트 설정 가능-->
       <button v-on:click="countUp">1씩증가</button>
@@ -286,9 +279,9 @@
         }
       })
     </script>
-  </body>
+
 </code>
-</pre>
+
 
 --------------------------------------------------------------------------------------------------
 
@@ -298,9 +291,9 @@
 
 - v-if를 사용해서 프로퍼티를 이용해 조건을 주어 HTML을 표현할 수 있다.
 
-<pre>
+
 <code class="codes">
-  <body>
+
     <div id="app">
       <!--버튼 클릭시 클릭한 text출력과 클릭한 버튼 비활성-->
       <button v-bind:disabled="one" v-on:click="oneCheck">one</button>
@@ -338,17 +331,17 @@
         }
       })
     </script>
-  </body>
+
 </code>
-</pre>
+
 
 ### v-for
 
 - v-for은 배열로 이루어진 프로퍼티를 반복적으로 표현할 때 사용한다.
 
-<pre>
+
 <code class="codes">
-  <body>
+
     <div id="app">
       <ul>
         <!--arr배열의 각 요소를 item에 담는다-->
@@ -388,9 +381,9 @@
         }
       })
     </script>
-  </body>
+
 </code>
-</pre>
+
 --------------------------------------------------------------------------------------------------
 
 
@@ -405,9 +398,9 @@
 - computed의 원리가 각 함수안에 들어있는 값의 변경을 감지하여 실행되게 되는데, 예제코드는 price또는 count값이 변경되면 sum함수안의 프로퍼티가 변경되는것 이므로, sum이 실행, 변경되면
 taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
 
-<pre>
+
 <code class="codes">
-  <body>
+
     <div id="app">
       <input v-model.number="price" type="number">원 x
       <input v-model.number="count" type="number">개
@@ -432,9 +425,9 @@ taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
         }
       })
     </script>
-  </body>
+
 </code>
-</pre>
+
 
 ### watch
 
@@ -442,9 +435,9 @@ taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
 
 - 하지만 computed는 무조건 반환값이 있어야하는데, watch는 그렇지않다. 그래서 보통 computed는 계산식을 적용, watch는 어떤 로직에 따른 처리를 할 때 사용한다.
 
-<pre>
+
 <code class="codes">
-  <body>
+
     <div id="app">
       <p>금지문자는、「{{ forbiddenText }}」</p>
       <textarea  v-model="inputText"></textarea>
@@ -470,9 +463,9 @@ taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
         }
       })
     </script>
-  </body>
+
 </code>
-</pre>
+
 
 ## 9. component
 
@@ -491,9 +484,9 @@ taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
 
 - 로컬은 vue 인스턴스에 components 옵션을 통해 생성하는 방식이다.
 
-<pre>
+
 <code class="codes">
-  <body>
+
     <div id="app">
       <!--컴포넌트 태그명을 사용해 컴포넌트 사용-->
       <my-component></my-component>
@@ -524,13 +517,13 @@ taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
         padding: 8px;
       }
     </style>
-  </body>
-</code>
-</pre>
 
-<pre>
+</code>
+
+
+
 <code class="codes">
-  <body>
+
     <div id="app">
       <!--각기 다른 컴포넌트-->
       <my-component></my-component>
@@ -559,18 +552,18 @@ taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
         }
       })
     </script>
-  </body>
+
 </code>
-</pre>
+
 
 ### props
 
 - 컴포넌트를 사용할 때 HTML의 컴포넌트 태그에서 데이터를 props를 이용해 전달 받을수 있다.
 - 주의점은 props의 프로퍼티명은 myName과 같이 카멜케이스로 쓰고 HTML에서는 my-name처럼 케밥케이스로 쓴다.
 
-<pre>
+
 <code class="codes">
-  <body>
+
     <h2>컴포넌트에 값을 전달하는 예제</h2>
     <div id="app">
       <!--my-name태그로 myName 프로퍼티에 값을 전달한다.-->
@@ -593,6 +586,5 @@ taxIncluded안의 프로퍼티가 변경되어 실행되게 된다.
         }
       })
     </script>
-  </body>
+
 </code>
-</pre>
